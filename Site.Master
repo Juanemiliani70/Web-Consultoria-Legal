@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Parcial2_LP3.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <%-- Necesario para que la página se adapte a celulares --%>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asesoría Legal Global</title>
+    <link href="~/estilos.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <%-- Cabecera con logo y navbar: se repite en todas las páginas --%>
+        <header class="cabecera">
+            <div class="cabecera-interior">
+
+                <div class="marca">
+                    <asp:Image ID="imgLogo" runat="server"
+                        ImageUrl="~/Images/logo-azul.png" AlternateText="Logo Asesoría Legal" />
+                    <span>Asesoría Legal Global</span>
+                </div>
+
+                <%-- Navbar con los enlaces a las secciones --%>
+                <nav class="navbar">
+                    <asp:HyperLink ID="lnkInicio" runat="server" NavigateUrl="~/Default.aspx">Inicio</asp:HyperLink>
+                    <asp:HyperLink ID="lnkRegistro" runat="server" NavigateUrl="~/Registro.aspx">Registro</asp:HyperLink>
+                    <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Login.aspx">Iniciar sesión</asp:HyperLink>
+                    <asp:HyperLink ID="lnkDocumentos" runat="server" NavigateUrl="~/Documentos.aspx">Mis documentos</asp:HyperLink>
+                </nav>
+
+            </div>
+        </header>
+
+        <%-- Acá se muestra el contenido propio de cada página --%>
+        <main class="contenido">
+            <asp:ContentPlaceHolder ID="cphContenido" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <%-- Footer sencillo, presente en todas las páginas --%>
+        <footer class="pie">
+            <p>&copy; 2026 Asesoría Legal Global - Todos los derechos reservados</p>
+        </footer>
+
+    </form>
+</body>
+</html>

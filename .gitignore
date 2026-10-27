@@ -1,0 +1,12 @@
+# Carpetas generadas por Visual Studio
+.vs/
+bin/
+obj/
+packages/
+
+# Archivos de usuario
+*.user
+*.suo
+
+# Documentos subidos durante las pruebas (datos de usuario, no del proyecto)
+**/App_Data/Documentos/

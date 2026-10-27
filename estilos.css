@@ -1,0 +1,258 @@
+﻿/* estilos.css - estilos compartidos por todas las páginas */
+
+:root {
+    --azul: #1a237e; /* azul de los logos */
+    --azul-oscuro: #0f1550;
+    --dorado: #f2b441; /* dorado de la balanza */
+    --gris: #f4f5f9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Segoe UI, Arial, sans-serif;
+    background-color: var(--gris);
+    color: #222;
+}
+
+/* ===== Cabecera y navbar ===== */
+.cabecera {
+    background-color: var(--azul-oscuro);
+    color: white;
+    border-bottom: 4px solid var(--dorado);
+}
+
+.cabecera-interior {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* permite que se acomode en pantallas chicas */
+    gap: 12px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+    .marca img {
+        height: 55px;
+        border-radius: 6px;
+    }
+
+    .marca span {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+.navbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+        .navbar a:hover {
+            background-color: var(--dorado);
+            color: var(--azul-oscuro);
+        }
+
+/* ===== Contenido ===== */
+.contenido {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 20px;
+    min-height: 60vh;
+}
+
+.tarjeta {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+    .tarjeta h2 {
+        color: var(--azul);
+        margin-top: 0;
+    }
+
+.banner {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.logo-centrado {
+    display: block;
+    margin: 0 auto;
+    max-width: 220px;
+    width: 100%;
+}
+
+/* ===== Footer ===== */
+.pie {
+    background-color: var(--azul-oscuro);
+    color: white;
+    text-align: center;
+    padding: 18px 10px;
+    border-top: 4px solid var(--dorado);
+}
+
+/* ===== Diseño responsivo: pantallas de hasta 600px (celulares) ===== */
+@media (max-width: 600px) {
+    .cabecera-interior {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        width: 100%;
+        flex-direction: column;
+    }
+
+        .navbar a {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+    .marca span {
+        font-size: 1rem;
+    }
+}
+
+/* ===== Formulario de registro ===== */
+.formulario {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+    .campo label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--azul);
+    }
+
+    .campo input[type="text"],
+    .campo input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    .campo input:focus {
+        outline: none;
+        border-color: var(--dorado);
+        box-shadow: 0 0 0 3px rgba(242, 180, 65, 0.35);
+    }
+
+.error {
+    color: #c62828;
+    font-size: 0.9rem;
+}
+
+.resumen-errores {
+    background-color: #fdecea;
+    border-left: 4px solid #c62828;
+    padding: 10px 15px;
+    margin-bottom: 18px;
+    color: #c62828;
+}
+
+.boton {
+    background-color: var(--azul);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .boton:hover {
+        background-color: var(--dorado);
+        color: var(--azul-oscuro);
+    }
+
+.mensaje-exito {
+    margin-top: 18px;
+    padding: 12px 15px;
+    background-color: #e8f5e9;
+    border-left: 4px solid #2e7d32;
+    color: #1b5e20;
+}
+
+/* ===== Página de documentos ===== */
+.bienvenida {
+    font-size: 1.1rem;
+    color: var(--azul);
+    font-weight: 600;
+}
+
+.boton-secundario {
+    background-color: #6b7280;
+}
+
+.archivo {
+    max-width: 100%;
+}
+
+#cphContenido_lblResultado,
+.mensaje-exito,
+.resumen-errores {
+    display: block;
+    margin-top: 15px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .tabla th {
+        background-color: var(--azul);
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .tabla td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tabla a {
+        color: var(--azul);
+        font-weight: 600;
+    }
+
+/* En celulares la tabla permite desplazarse en horizontal en lugar de romper el diseño */
+@media (max-width: 600px) {
+    .tabla {
+        display: block;
+        overflow-x: auto;
+    }
+}
